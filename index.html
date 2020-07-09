@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+      <a class="navbar-brand text-white">
+        <span>Location App</span>
+      </a>
+      <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#nav1">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="nav1">
+        <ul class="navbar-nav text-center ml-auto">
+          <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+        </ul>
+      </div> -->
+    </nav>
+
+    <div class="input-group mt-5 w-50" style="margin-left: 25%;">
+      <input
+        type="text"
+        placeholder="Please type a country"
+        class="form-control form-control-lg text-dark"
+      />
+      <div class="input-group-append">
+        <button class="btn btn-outline-dark btn-lg" id="btnClick">Click</button>
+      </div>
+    </div>
+    <div
+      class="alert alert-danger w-50 mx-auto mt-3"
+      id="alert1"
+      style="display: none;"
+    >
+      Country not found
+    </div>
+    <div
+      class="card bg-dark text-white w-50 my-4 mx-auto"
+      style="display: none;"
+      id="card1"
+    >
+      <div class="card-header text-center">
+        <h4 class="text-capitalize"></h4>
+      </div>
+      <div class="card-body text-dark text-center">
+        <ul class="list-group list-group-flush" id="ulList"></ul>
+      </div>
+    </div>
+    <div
+      class="alert alert-danger w-50 mx-auto mt-3"
+      id="alert2"
+      style="display: none;"
+    >
+      State not found
+    </div>
+    <div
+      class="card bg-dark text-white w-50 my-4 mx-auto"
+      style="display: none;"
+      id="card2"
+    >
+      <div class="card-header text-center">
+        <h4 class="text-capitalize"></h4>
+      </div>
+      <div class="card-body text-dark text-center">
+        <ul class="list-group list-group-flush" id="ulList2"></ul>
+      </div>
+    </div>
+    <div
+      class="alert alert-danger w-50 mx-auto mt-3"
+      id="alert3"
+      style="display: none;"
+    >
+      City not found
+    </div>
+    <div
+      id="map"
+      style="width: 600px; height: 400px; margin: 2rem 175px;"
+    ></div>
+    <script src="https://api-maps.yandex.ru/2.1?apikey=d301ecb2-c86d-4b9a-a1e3-fb74a4bb0622&lang=en_US"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./map.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./fetch.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
