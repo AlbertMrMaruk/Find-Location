@@ -35,7 +35,6 @@ function event() {
             .querySelector("#cityBtn")
             .addEventListener("click", function (e) {
               e.preventDefault();
-              console.log(document.querySelector("#city"));
               city(input.value, document.querySelector("#city").value);
             });
         }

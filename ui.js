@@ -73,6 +73,8 @@ class Ui {
   deleteCities() {
     document.querySelector("#card2").style.display = "none";
     document.querySelectorAll("#ulList2 li").forEach((e) => e.remove());
+    document.querySelector("#map").style.display = "none";
+    document.querySelectorAll("#map *").forEach((e) => e.remove());
     document.querySelector("#alert2").style.display = "";
     setTimeout(function () {
       document.querySelector("#alert2").style.display = "none";

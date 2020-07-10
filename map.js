@@ -2,6 +2,7 @@
 // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
 class Carta {
   create(lan, long) {
+    document.querySelector("#map").style.display = "";
     ymaps.ready(init);
 
     function init() {
