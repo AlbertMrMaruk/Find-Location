@@ -31,7 +31,7 @@ class Ui {
     document.querySelectorAll("#ulList2 li").forEach((e) => e.remove());
   }
   deleteMap() {
-    document.querySelector("#map").remove();
+    document.querySelectorAll("#map *").forEach((e) => e.remove());
   }
   deleteAll() {
     document.querySelector("#card1").style.display = "none";
