@@ -51,13 +51,24 @@ function city(country, state) {
     )
     .then((cities) => {
       if (JSON.parse(cities).status == "success") {
-        ui.createCity(JSON.parse(cities).data, state);
-        document
-          .querySelector("#lanBtn")
-          .addEventListener("click", function (e) {
-            e.preventDefault();
-            adress(country, state, document.querySelector("#lan").value);
-          });
+        if (document.querySelector("#card2").style.display == "none") {
+          ui.createCity(JSON.parse(cities).data, state);
+          document
+            .querySelector("#lanBtn")
+            .addEventListener("click", function (e) {
+              e.preventDefault();
+              adress(country, state, document.querySelector("#lan").value);
+            });
+        } else {
+          ui.deleteState();
+          ui.createCity(JSON.parse(cities).data, state);
+          document
+            .querySelector("#lanBtn")
+            .addEventListener("click", function (e) {
+              e.preventDefault();
+              adress(country, state, document.querySelector("#lan").value);
+            });
+        }
       } else {
         ui.deleteCities();
       }
@@ -70,10 +81,18 @@ function adress(country, state, city) {
     )
     .then((resp) => {
       if (JSON.parse(resp).status == "success") {
-        carta.create(
-          JSON.parse(resp).data.location.coordinates[0],
-          JSON.parse(resp).data.location.coordinates[1]
-        );
+        if (document.querySelector("#map").style.display == "none") {
+          carta.create(
+            JSON.parse(resp).data.location.coordinates[0],
+            JSON.parse(resp).data.location.coordinates[1]
+          );
+        } else {
+          ui.deleteMap();
+          carta.create(
+            JSON.parse(resp).data.location.coordinates[0],
+            JSON.parse(resp).data.location.coordinates[1]
+          );
+        }
       } else {
         ui.deleteAdress();
       }

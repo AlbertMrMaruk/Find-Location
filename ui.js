@@ -27,10 +27,19 @@ class Ui {
   delete() {
     document.querySelectorAll("#ulList li").forEach((e) => e.remove());
   }
+  deleteState() {
+    document.querySelectorAll("#ulList2 li").forEach((e) => e.remove());
+  }
+  deleteMap() {
+    document.querySelector("#map").remove();
+  }
   deleteAll() {
     document.querySelector("#card1").style.display = "none";
+    document.querySelectorAll("#ulList li").forEach((e) => e.remove());
+    document.querySelectorAll("#ulList2 li").forEach((e) => e.remove());
     document.querySelector("#card2").style.display = "none";
     document.querySelector("#map").style.display = "none";
+    document.querySelectorAll("#map *").forEach((e) => e.remove());
     document.querySelector("#alert1").style.display = "";
     setTimeout(function () {
       document.querySelector("#alert1").style.display = "none";
@@ -63,6 +72,7 @@ class Ui {
   }
   deleteCities() {
     document.querySelector("#card2").style.display = "none";
+    document.querySelectorAll("#ulList2 li").forEach((e) => e.remove());
     document.querySelector("#alert2").style.display = "";
     setTimeout(function () {
       document.querySelector("#alert2").style.display = "none";
@@ -70,6 +80,7 @@ class Ui {
   }
   deleteAdress() {
     document.querySelector("#map").style.display = "none";
+    document.querySelectorAll("#map *").forEach((e) => e.remove());
     document.querySelector("#alert3").style.display = "";
     setTimeout(function () {
       document.querySelector("#alert3").style.display = "none";
